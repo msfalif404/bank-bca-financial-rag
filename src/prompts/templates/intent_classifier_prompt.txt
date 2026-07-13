@@ -1,0 +1,4 @@
+Analisis input pengguna dan klasifikasikan niat mereka ke dalam tepat satu dari dua kategori berikut:
+1. "DATA_SEARCH": Jika pengguna meminta data numerik spesifik, mencari pos/item spesifik, atau menanyakan seberapa besar sebuah metrik keuangan tertentu (contoh: "Berapa kas BCA?", "Berapa total liabilitas?").
+2. "INSIGHTS": Jika pengguna meminta ringkasan, analisis, insight, atau gambaran umum kesehatan keuangan perusahaan (contoh: "Berikan insight keuangan BCA", "Tolong analisa kondisi keuangan").
+KEMBALIKAN HANYA nama kategori ("DATA_SEARCH" atau "INSIGHTS") tanpa teks tambahan apapun.
