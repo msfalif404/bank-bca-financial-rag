@@ -1,0 +1,582 @@
+{
+    "file_name": "20240913-laporan-keuangan-publikasi-bulanan-agustus-2024-ind.pdf",
+    "company_name": "PT BANK CENTRAL ASIA Tbk",
+    "period_date": "31 Agustus 2024",
+    "audit_status": "Tidak Diaudit",
+    "scale": "Dalam jutaan Rupiah",
+    "reports": [
+        {
+            "report_title": "LAPORAN POSISI KEUANGAN (NERACA)",
+            "categories": [
+                {
+                    "category_name": "ASET",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Kas",
+                            "item_value": 15897902.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Penempatan pada Bank Indonesia",
+                            "item_value": 75346714.0
+                        },
+                        {
+                            "item_id": "3",
+                            "item_name": "Penempatan pada bank lain",
+                            "item_value": 10671249.0
+                        },
+                        {
+                            "item_id": "4",
+                            "item_name": "Tagihan spot dan derivatif/forward",
+                            "item_value": 401350.0
+                        },
+                        {
+                            "item_id": "5",
+                            "item_name": "Surat berharga yang dimiliki",
+                            "item_value": 396950307.0
+                        },
+                        {
+                            "item_id": "6",
+                            "item_name": "Surat berharga yang dijual dengan janji dibeli kembali (repo)",
+                            "item_value": 11556970.0
+                        },
+                        {
+                            "item_id": "7",
+                            "item_name": "Tagihan atas surat berharga yang dibeli dengan janji dijual kembali (reverse repo )",
+                            "item_value": 2827753.0
+                        },
+                        {
+                            "item_id": "8",
+                            "item_name": "Tagihan akseptasi",
+                            "item_value": 10693548.0
+                        },
+                        {
+                            "item_id": "9",
+                            "item_name": "Kredit dan pembiayaan yang diberikan",
+                            "item_value": 842705785.0
+                        },
+                        {
+                            "item_id": "10",
+                            "item_name": "Pembiayaan syariah",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "11",
+                            "item_name": "Penyertaan Modal",
+                            "item_value": 10330797.0
+                        },
+                        {
+                            "item_id": "12",
+                            "item_name": "Aset keuangan lainnya",
+                            "item_value": 13398874.0
+                        },
+                        {
+                            "item_id": "13",
+                            "item_name": "Cadangan kerugian penurunan nilai aset keuangan -/-",
+                            "item_value": -34371532.0
+                        },
+                        {
+                            "item_id": "13.a",
+                            "item_name": "Surat berharga yang dimiliki",
+                            "item_value": -382649.0
+                        },
+                        {
+                            "item_id": "13.b",
+                            "item_name": "Kredit yang diberikan dan pembiayaan syariah",
+                            "item_value": -33472814.0
+                        },
+                        {
+                            "item_id": "13.c",
+                            "item_name": "Lainnya",
+                            "item_value": -516069.0
+                        },
+                        {
+                            "item_id": "14",
+                            "item_name": "Aset tidak berwujud",
+                            "item_value": 1283063.0
+                        },
+                        {
+                            "item_id": "14.a",
+                            "item_name": "Akumulasi amortisasi aset tidak berwujud -/-",
+                            "item_value": -908740.0
+                        },
+                        {
+                            "item_id": "15",
+                            "item_name": "Aset tetap dan inventaris",
+                            "item_value": 36136020.0
+                        },
+                        {
+                            "item_id": "15.a",
+                            "item_name": "Akumulasi penyusutan aset tetap dan inventaris -/-",
+                            "item_value": -10232651.0
+                        },
+                        {
+                            "item_id": "16",
+                            "item_name": "Aset non produktif",
+                            "item_value": 1860195.0
+                        },
+                        {
+                            "item_id": "16.a",
+                            "item_name": "Properti terbengkalai",
+                            "item_value": 36548.0
+                        },
+                        {
+                            "item_id": "16.b",
+                            "item_name": "Agunan yang diambil alih",
+                            "item_value": 1795875.0
+                        },
+                        {
+                            "item_id": "16.c",
+                            "item_name": "Rekening tunda",
+                            "item_value": 9851.0
+                        },
+                        {
+                            "item_id": "16.d",
+                            "item_name": "Aset antarkantor",
+                            "item_value": 17921.0
+                        },
+                        {
+                            "item_id": "17",
+                            "item_name": "Aset lainnya",
+                            "item_value": 16056510.0
+                        }
+                    ],
+                    "category_total": 1400604114.0
+                },
+                {
+                    "category_name": "LIABILITAS",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Giro",
+                            "item_value": 346657005.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Tabungan",
+                            "item_value": 557482789.0
+                        },
+                        {
+                            "item_id": "3",
+                            "item_name": "Deposito",
+                            "item_value": 198144531.0
+                        },
+                        {
+                            "item_id": "4",
+                            "item_name": "Uang Elektronik",
+                            "item_value": 1301703.0
+                        },
+                        {
+                            "item_id": "5",
+                            "item_name": "Liabilitas kepada Bank Indonesia",
+                            "item_value": 577.0
+                        },
+                        {
+                            "item_id": "6",
+                            "item_name": "Liabilitas kepada bank lain",
+                            "item_value": 5229708.0
+                        },
+                        {
+                            "item_id": "7",
+                            "item_name": "Liabilitas spot dan derivatif/forward",
+                            "item_value": 298363.0
+                        },
+                        {
+                            "item_id": "8",
+                            "item_name": "Liabilitas atas surat berharga yang dijual dengan janji dibeli kembali (repo)",
+                            "item_value": 11371701.0
+                        },
+                        {
+                            "item_id": "9",
+                            "item_name": "Liabilitas akseptasi",
+                            "item_value": 5040470.0
+                        },
+                        {
+                            "item_id": "10",
+                            "item_name": "Surat berharga yang diterbitkan",
+                            "item_value": 500000.0
+                        },
+                        {
+                            "item_id": "11",
+                            "item_name": "Pinjaman/pembiayaan yang diterima",
+                            "item_value": 49892.0
+                        },
+                        {
+                            "item_id": "12",
+                            "item_name": "Setoran jaminan",
+                            "item_value": 202293.0
+                        },
+                        {
+                            "item_id": "13",
+                            "item_name": "Liabilitas antarkantor",
+                            "item_value": 24586.0
+                        },
+                        {
+                            "item_id": "14",
+                            "item_name": "Liabilitas lainnya",
+                            "item_value": 33537791.0
+                        }
+                    ],
+                    "category_total": 1159841409.0
+                },
+                {
+                    "category_name": "EKUITAS",
+                    "items": [
+                        {
+                            "item_id": "15",
+                            "item_name": "Modal disetor",
+                            "item_value": 1540938.0
+                        },
+                        {
+                            "item_id": "15.a",
+                            "item_name": "Modal dasar",
+                            "item_value": 5500000.0
+                        },
+                        {
+                            "item_id": "15.b",
+                            "item_name": "Modal yang belum disetor -/-",
+                            "item_value": -3959062.0
+                        },
+                        {
+                            "item_id": "15.c",
+                            "item_name": "Saham yang dibeli kembali (treasury stock ) -/-",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "16",
+                            "item_name": "Tambahan modal disetor",
+                            "item_value": 5711368.0
+                        },
+                        {
+                            "item_id": "16.a",
+                            "item_name": "Agio",
+                            "item_value": 5711368.0
+                        },
+                        {
+                            "item_id": "16.b",
+                            "item_name": "Disagio -/-",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "16.c",
+                            "item_name": "Dana setoran modal",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "16.d",
+                            "item_name": "Lainnya",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "17",
+                            "item_name": "Penghasilan komprehensif lain",
+                            "item_value": 7866933.0
+                        },
+                        {
+                            "item_id": "17.a",
+                            "item_name": "Keuntungan",
+                            "item_value": 11628187.0
+                        },
+                        {
+                            "item_id": "17.b",
+                            "item_name": "Kerugian -/-",
+                            "item_value": -3761254.0
+                        },
+                        {
+                            "item_id": "18",
+                            "item_name": "Cadangan",
+                            "item_value": 3720540.0
+                        },
+                        {
+                            "item_id": "18.a",
+                            "item_name": "Cadangan umum",
+                            "item_value": 3720540.0
+                        },
+                        {
+                            "item_id": "18.b",
+                            "item_name": "Cadangan tujuan",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "19",
+                            "item_name": "Laba/rugi",
+                            "item_value": 221922926.0
+                        },
+                        {
+                            "item_id": "19.a",
+                            "item_name": "Tahun - tahun lalu",
+                            "item_value": 213977315.0
+                        },
+                        {
+                            "item_id": "19.b",
+                            "item_name": "Tahun berjalan",
+                            "item_value": 35990685.0
+                        },
+                        {
+                            "item_id": "19.c",
+                            "item_name": "Dividen yang dibayarkan -/-",
+                            "item_value": -28045074.0
+                        }
+                    ],
+                    "category_total": 240762705.0
+                }
+            ],
+            "report_total": 1400604114.0
+        },
+        {
+            "report_title": "LAPORAN LABA RUGI DAN PENGHASILAN KOMPREHENSIF LAIN",
+            "categories": [
+                {
+                    "category_name": "PENDAPATAN DAN BEBAN OPERASIONAL",
+                    "items": [
+                        {
+                            "item_id": "A.1",
+                            "item_name": "Pendapatan Bunga",
+                            "item_value": 58272982.0
+                        },
+                        {
+                            "item_id": "A.2",
+                            "item_name": "Beban Bunga",
+                            "item_value": 7725753.0
+                        },
+                        {
+                            "item_id": "A",
+                            "item_name": "Pendapatan (Beban) Bunga Bersih",
+                            "item_value": 50547229.0
+                        },
+                        {
+                            "item_id": "B.1",
+                            "item_name": "Keuntungan (kerugian) dari peningkatan (penurunan) nilai wajar aset keuangan",
+                            "item_value": 187343.0
+                        },
+                        {
+                            "item_id": "B.2",
+                            "item_name": "Keuntungan (kerugian) dari penurunan (peningkatan) nilai wajar liabilitas keuangan",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "B.3",
+                            "item_name": "Keuntungan (kerugian) dari penjualan aset keuangan",
+                            "item_value": 1162135.0
+                        },
+                        {
+                            "item_id": "B.4",
+                            "item_name": "Keuntungan (kerugian) dari transaksi spot dan derivatif/forward (realised )",
+                            "item_value": 362913.0
+                        },
+                        {
+                            "item_id": "B.5",
+                            "item_name": "Keuntungan (kerugian) dari penyertaan dengan equity method",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "B.6",
+                            "item_name": "Keuntungan (kerugian) dari penjabaran transaksi valuta asing",
+                            "item_value": 359796.0
+                        },
+                        {
+                            "item_id": "B.7",
+                            "item_name": "Pendapatan dividen",
+                            "item_value": 1112892.0
+                        },
+                        {
+                            "item_id": "B.8",
+                            "item_name": "Pendapatan komisi/provisi/fee dan administrasi",
+                            "item_value": 11729249.0
+                        },
+                        {
+                            "item_id": "B.9",
+                            "item_name": "Pendapatan lainnya",
+                            "item_value": 448874.0
+                        },
+                        {
+                            "item_id": "B.10",
+                            "item_name": "Beban (pemulihan) kerugian penurunan nilai aset keuangan (impairment )",
+                            "item_value": 1288097.0
+                        },
+                        {
+                            "item_id": "B.11",
+                            "item_name": "Kerugian terkait risiko operasional",
+                            "item_value": 1015.0
+                        },
+                        {
+                            "item_id": "B.12",
+                            "item_name": "Beban tenaga kerja",
+                            "item_value": 10577153.0
+                        },
+                        {
+                            "item_id": "B.13",
+                            "item_name": "Beban promosi",
+                            "item_value": 654717.0
+                        },
+                        {
+                            "item_id": "B.14",
+                            "item_name": "Beban lainnya",
+                            "item_value": 9006132.0
+                        },
+                        {
+                            "item_id": "B",
+                            "item_name": "Pendapatan (Beban) Operasional Lainnya Bersih",
+                            "item_value": -6163912.0
+                        }
+                    ],
+                    "category_total": 44383317.0
+                },
+                {
+                    "category_name": "PENDAPATAN DAN BEBAN NON OPERASIONAL",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Keuntungan (kerugian) penjualan aset tetap dan inventaris",
+                            "item_value": -1089.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Pendapatan (beban) non operasional lainnya",
+                            "item_value": -156012.0
+                        }
+                    ],
+                    "category_total": -157101.0
+                },
+                {
+                    "category_name": "PENGHASILAN KOMPREHENSIF LAIN",
+                    "items": [
+                        {
+                            "item_id": "1.a",
+                            "item_name": "Keuntungan yang berasal dari revaluasi aset tetap",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "1.b",
+                            "item_name": "Keuntungan (kerugian) yang berasal dari pengukuran kembali atas program pensiun manfaat pasti",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "1.c",
+                            "item_name": "Lainnya",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "2.a",
+                            "item_name": "Keuntungan (kerugian) yang berasal dari penyesuaian akibat penjabaran laporan keuangan dalam mata uang asing",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "2.b",
+                            "item_name": "Keuntungan (kerugian) dari perubahan nilai wajar aset keuangan / instrumen utang yang diukur pada nilai wajar melalui penghasilan komprehensif lain",
+                            "item_value": -107352.0
+                        },
+                        {
+                            "item_id": "2.c",
+                            "item_name": "Lainnya",
+                            "item_value": null
+                        }
+                    ],
+                    "category_total": -107352.0
+                }
+            ],
+            "report_total": 35883333.0
+        },
+        {
+            "report_title": "LAPORAN KOMITMEN DAN KONTINJENSI",
+            "categories": [
+                {
+                    "category_name": "TAGIHAN KOMITMEN",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Fasilitas pinjaman/pembiayaan yang belum ditarik",
+                            "item_value": null
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Posisi valas yang akan diterima dari transaksi spot dan derivatif/forward",
+                            "item_value": 18193350.0
+                        },
+                        {
+                            "item_id": "3",
+                            "item_name": "Lainnya",
+                            "item_value": 488549.0
+                        }
+                    ],
+                    "category_total": 18681899.0
+                },
+                {
+                    "category_name": "KEWAJIBAN KOMITMEN",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Fasilitas kredit/pembiayaan yang belum ditarik",
+                            "item_value": 405393422.0
+                        },
+                        {
+                            "item_id": "1.a",
+                            "item_name": "Committed",
+                            "item_value": 308444603.0
+                        },
+                        {
+                            "item_id": "1.b",
+                            "item_name": "Uncommitted",
+                            "item_value": 96948819.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Irrevocable L/C yang masih berjalan",
+                            "item_value": 11309529.0
+                        },
+                        {
+                            "item_id": "3",
+                            "item_name": "Posisi valas yang akan diserahkan untuk transaksi spot dan derivatif/forward",
+                            "item_value": 16935880.0
+                        },
+                        {
+                            "item_id": "4",
+                            "item_name": "Lainnya",
+                            "item_value": 3013920.0
+                        }
+                    ],
+                    "category_total": 436652751.0
+                },
+                {
+                    "category_name": "TAGIHAN KONTINJENSI",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Garansi yang diterima",
+                            "item_value": 197477.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Lainnya",
+                            "item_value": null
+                        }
+                    ],
+                    "category_total": 197477.0
+                },
+                {
+                    "category_name": "KEWAJIBAN KONTINJENSI",
+                    "items": [
+                        {
+                            "item_id": "1",
+                            "item_name": "Garansi yang diberikan",
+                            "item_value": 25840945.0
+                        },
+                        {
+                            "item_id": "2",
+                            "item_name": "Lainnya",
+                            "item_value": null
+                        }
+                    ],
+                    "category_total": 25840945.0
+                }
+            ],
+            "report_total": null
+        }
+    ],
+    "insights": [
+        "Total aset dan total liabilitas serta ekuitas seimbang, menunjukkan neraca yang sehat.",
+        "Pendapatan bunga bersih cukup tinggi, menunjukkan efisiensi dalam pengelolaan beban bunga.",
+        "Komitmen dan kontinjensi menunjukkan eksposur yang signifikan terhadap fasilitas kredit yang belum ditarik."
+    ]
+}
