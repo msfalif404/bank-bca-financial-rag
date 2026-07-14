@@ -26,33 +26,35 @@ This project solves that by:
 ## 3. High-Level Project Flow
 The system operates in two main phases: Ingestion and Retrieval.
 
+### Phase A: Ingestion (Data Processing)
+
+**Ingestion Flow:**
 ```mermaid
 graph TD
-    subgraph "Phase A: Data Ingestion"
-        A[Raw PDF Reports] -->|gpt-4o Extraction| B(Unified JSON Schema)
-        B -->|Semantic Chunking| C(Context-Rich Chunks)
-        C -->|OpenAI Embeddings| D[(ChromaDB Vector Store)]
-        B -->|BM25 Tokenization| E[(Lexical Index)]
-    end
-
-    subgraph "Phase B: Agentic RAG Pipeline"
-        F[User Query] --> G{Intent Classifier Agent}
-        G -->|DATA_SEARCH / INSIGHTS| H[Hybrid Retriever]
-        G -->|OFF_TOPIC| I[Guardrail Rejection]
-        
-        H --> J(Vector Search + Lexical Search)
-        J --> K[Cross-Encoder Reranker]
-        K --> L[Generator Agent]
-        L --> M[Streaming Response]
-    end
+    A[Raw PDF Reports] -->|gpt-4o Extraction| B(Unified JSON Schema)
+    B -->|Semantic Chunking| C(Context-Rich Chunks)
+    C -->|OpenAI Embeddings| D[(ChromaDB Vector Store)]
+    B -->|BM25 Tokenization| E[(Lexical Index)]
 ```
 
-### Phase A: Ingestion (Data Processing)
 1. **Extraction**: Raw PDFs are fed directly to `gpt-4o`. The model maps multi-page tables into a nested `FinancialDocument` Pydantic schema, successfully differentiating multi-page assets, liabilities, and equity into singular unified reports.
 2. **Chunking**: The JSON is broken down into semantically rich chunks (e.g., `overview`, `report_total`, `category_total`, and specific `items`).
 3. **Embedding**: Chunks are embedded via `text-embedding-3-small` and stored in ChromaDB.
 
 ### Phase B: Agentic Retrieval (Querying)
+
+**RAG Pipeline Flow:**
+```mermaid
+graph TD
+    F[User Query] --> G{Intent Classifier Agent}
+    G -->|DATA_SEARCH / INSIGHTS| H[Hybrid Retriever]
+    G -->|OFF_TOPIC| I[Guardrail Rejection]
+    
+    H --> J(Vector Search + Lexical Search)
+    J --> K[Cross-Encoder Reranker]
+    K --> L[Generator Agent]
+    L --> M[Streaming Response]
+```
 
 **Graph Architecture:**
 ```mermaid
@@ -155,3 +157,9 @@ Here is a quick map of the repository to help you navigate and extend the system
   - `reranker.py`: Employs a HuggingFace `CrossEncoder` to re-score and rerank retrieved documents with `@st.cache_resource` memory optimization.
   - `retriever.py`: Bridges the agent queries to the hybrid search and reranker pipeline.
 - **`src/utils/evaluate.py`**: Automated testing script to validate the system's accuracy against Ground Truth datasets.
+
+## 8. Future Improvements
+
+- **Integration with Multi-Agent Setup**: Connecting this RAG agent to other specialized agents (e.g., General Chatbot, HR, IT) via a master orchestrator.
+- **Automated Ingestion Watcher**: Creating a background worker or Celery task that automatically monitors the `data/raw/` directory and ingests new PDFs dynamically.
+- **Multi-Year Comparative Analysis**: Expanding the EDA Dashboard to support comparative Year-over-Year (YoY) charts over a longer timeframe.
