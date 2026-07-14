@@ -29,11 +29,6 @@ class PromptManager:
         return self.get_prompt("extraction_prompt.txt")
 
     @property
-    def audit_prompt(self) -> str:
-        """Returns the prompt used for auditing GenAI extraction vs Actual data."""
-        return self.get_prompt("audit_prompt.txt")
-
-    @property
     def intent_classifier_prompt(self) -> str:
         """Returns the prompt for classifying user intent into graph routes."""
         return self.get_prompt("intent_classifier_prompt.txt")

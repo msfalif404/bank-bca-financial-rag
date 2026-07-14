@@ -2,7 +2,7 @@ import base64
 from pathlib import Path
 from openai import OpenAI
 
-from src.models.report import FinancialReport
+from src.models.report import FinancialDocument
 from src.prompts.manager import prompt_manager
 from config.settings import OPENAI_API_KEY
 
@@ -13,7 +13,7 @@ def encode_file_to_base64(file_path: str) -> str:
     with open(file_path, "rb") as file:
         return base64.b64encode(file.read()).decode('utf-8')
 
-def extract_financial_data(file_path: str) -> FinancialReport:
+def extract_financial_data(file_path: str) -> FinancialDocument:
     """Extracts data from a PDF document directly using OpenAI."""
     path = Path(file_path)
     if not path.exists():
@@ -36,7 +36,7 @@ def extract_financial_data(file_path: str) -> FinancialReport:
     system_prompt = prompt_manager.extraction_prompt
     
     response = client.beta.chat.completions.parse(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         temperature=0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -48,13 +48,13 @@ def extract_financial_data(file_path: str) -> FinancialReport:
                 ]
             }
         ],
-        response_format=FinancialReport,
-        max_tokens=4000
+        response_format=FinancialDocument,
+        max_tokens=10000
     )
     
     return response.choices[0].message.parsed
 
-def ingest_document(file_path: str, output_json_path: str = None) -> FinancialReport:
+def ingest_document(file_path: str, output_json_path: str = None) -> FinancialDocument:
     """Wrapper function to read a document and optionally save its extracted JSON."""
     extracted_data = extract_financial_data(file_path)
     

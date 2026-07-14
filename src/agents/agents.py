@@ -1,16 +1,14 @@
+import litellm
+from litellm import completion, Cache
 from google.adk import Agent, Workflow, Event
 from google.adk.models.lite_llm import LiteLlm
 
 from src.tools.tools import search_financial_records, get_report_overview
 from src.prompts.manager import prompt_manager
 
+litellm.cache = Cache(type="local")
 llm_model = LiteLlm(model="openai/gpt-4o-mini")
 
-import litellm
-from litellm import completion, Cache
-
-# Aktifkan In-Memory Caching secara global untuk LiteLLM
-litellm.cache = Cache(type="local")
 def intent_classifier_node(node_input: str) -> Event:
     """Classifies user intent and routes to the appropriate agent."""
     try:
@@ -24,12 +22,11 @@ def intent_classifier_node(node_input: str) -> Event:
         )
         route = response.choices[0].message.content.strip().upper()
     except Exception:
-        route = "DATA_SEARCH"
+        route = "OFF_TOPIC"
         
-    if route not in ["DATA_SEARCH", "INSIGHTS"]:
-        route = "DATA_SEARCH"
+    if route not in ["DATA_SEARCH", "INSIGHTS", "OFF_TOPIC"]:
+        route = "OFF_TOPIC"
         
-    # Teruskan input asli ke agen selanjutnya
     return Event(route=[route], message=node_input)
 
 data_search_agent = Agent(
@@ -46,13 +43,20 @@ insights_agent = Agent(
     tools=[get_report_overview]
 )
 
+off_topic_agent = Agent(
+    name="off_topic_agent",
+    model=llm_model,
+    instruction="Anda adalah asisten khusus analisis laporan keuangan Bank BCA. Jawab dengan singkat dan sopan bahwa Anda tidak bisa menjawab pertanyaan tersebut karena di luar konteks laporan keuangan bank atau panduan sistem Anda.",
+)
+
 financial_rag_workflow = Workflow(
     name="financial_rag_workflow",
     edges=[
         ("START", intent_classifier_node),
         (intent_classifier_node, {
             "DATA_SEARCH": data_search_agent,
-            "INSIGHTS": insights_agent
+            "INSIGHTS": insights_agent,
+            "OFF_TOPIC": off_topic_agent
         })
     ]
 )

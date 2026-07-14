@@ -1,11 +1,10 @@
 import uuid
 import streamlit as st
+
 from src.utils.telemetry import setup_telemetry
+from src.rag.retriever import ask_financial_agent_stream
 
-# Nyalakan Phoenix Telemetry
 setup_telemetry()
-
-from src.rag.retriever import ask_financial_agent_sync
 
 st.set_page_config(
     page_title="Financial RAG Agent",
@@ -37,17 +36,16 @@ if prompt := st.chat_input("Contoh: 'Berapa Kas BCA 2024?' atau 'Tolong berikan 
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        with st.spinner("Agen sedang menganalisis intent dan mencari data..."):
-            try:
-                response_text = ask_financial_agent_sync(
-                    query=prompt, 
-                    session_id=st.session_state.session_id
-                )
-                
-                st.markdown(response_text)
-                st.session_state.messages.append({"role": "assistant", "content": response_text})
-                
-            except Exception as e:
-                error_msg = f"Terjadi kesalahan pada sistem agen: {str(e)}"
-                st.error(error_msg)
-                st.session_state.messages.append({"role": "assistant", "content": error_msg})
+        try:
+            stream_gen = ask_financial_agent_stream(
+                query=prompt, 
+                session_id=st.session_state.session_id
+            )
+            response_text = st.write_stream(stream_gen)
+            st.session_state.messages.append({"role": "assistant", "content": response_text})
+            
+        except Exception as e:
+            error_msg = f"Terjadi kesalahan pada sistem agen: {str(e)}"
+            st.error(error_msg)
+            st.session_state.messages.append({"role": "assistant", "content": error_msg})
+

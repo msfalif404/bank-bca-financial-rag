@@ -42,7 +42,13 @@ def get_report_overview(company_name: str) -> dict:
     if not results['documents'] or not results['documents'][0]:
         return {"status": "error", "message": f"Tidak ada overview untuk perusahaan {company_name}."}
         
+    formatted_data = []
+    for doc, meta in zip(results['documents'][0], results['metadatas'][0]):
+        period = meta.get('period_date', 'Tidak diketahui')
+        formatted_data.append(f"Periode Laporan: {period}\n{doc}")
+        
     return {
         "status": "success", 
-        "data": results['documents'][0]
+        "data": formatted_data
     }
+

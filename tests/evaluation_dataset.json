@@ -1,0 +1,57 @@
+[
+  {
+    "question": "Berapa total Aset Bank BCA per 30 November 2024?",
+    "ground_truth": "Total Aset PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 1.415.407.416 Jutaan Rupiah.",
+    "expected_numbers": ["1.415.407.416", "1415407416"]
+  },
+  {
+    "question": "Berapa total Ekuitas Bank BCA per 31 Agustus 2024?",
+    "ground_truth": "Total Ekuitas PT BANK CENTRAL ASIA Tbk per 31 Agustus 2024 adalah 240.762.705 Jutaan Rupiah.",
+    "expected_numbers": ["240.762.705", "240762705"]
+  },
+  {
+    "question": "Berapa total Liabilitas Bank BCA per 31 Oktober 2024?",
+    "ground_truth": "Total Liabilitas PT BANK CENTRAL ASIA Tbk per 31 Oktober 2024 adalah 1.145.652.406 Jutaan Rupiah.",
+    "expected_numbers": ["1.145.652.406", "1145652406"]
+  },
+  {
+    "question": "Berapa total Aset Bank BCA per 31 Oktober 2024?",
+    "ground_truth": "Total Aset PT BANK CENTRAL ASIA Tbk per 31 Oktober 2024 adalah 1.396.684.240 Jutaan Rupiah.",
+    "expected_numbers": ["1.396.684.240", "1396684240"]
+  },
+  {
+    "question": "Berapa total Liabilitas Bank BCA per 30 November 2024?",
+    "ground_truth": "Total Liabilitas PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 1.166.218.740 Jutaan Rupiah.",
+    "expected_numbers": ["1.166.218.740", "1166218740"]
+  },
+  {
+    "question": "Berapa total Ekuitas Bank BCA per 30 November 2024?",
+    "ground_truth": "Total Ekuitas PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 249.188.676 Jutaan Rupiah.",
+    "expected_numbers": ["249.188.676", "249188676"]
+  },
+  {
+    "question": "Berapa nilai Kas Bank BCA per 30 November 2024?",
+    "ground_truth": "Nilai Kas PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 17.218.757 Jutaan Rupiah.",
+    "expected_numbers": ["17.218.757", "17218757"]
+  },
+  {
+    "question": "Berapa Laba (Rugi) Operasional Bank BCA per 30 November 2024?",
+    "ground_truth": "Laba (Rugi) Operasional PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 62.379.650 Jutaan Rupiah.",
+    "expected_numbers": ["62.379.650", "62379650"]
+  },
+  {
+    "question": "Berapa Laba (Rugi) Operasional Bank BCA per 31 Oktober 2024?",
+    "ground_truth": "Laba (Rugi) Operasional PT BANK CENTRAL ASIA Tbk per 31 Oktober 2024 adalah 56.860.337 Jutaan Rupiah.",
+    "expected_numbers": ["56.860.337", "56860337"]
+  },
+  {
+    "question": "Berapa total Kewajiban Komitmen Bank BCA per 30 November 2024?",
+    "ground_truth": "Total Kewajiban Komitmen PT BANK CENTRAL ASIA Tbk per 30 November 2024 adalah 423.053.679 Jutaan Rupiah.",
+    "expected_numbers": ["423.053.679", "423053679"]
+  },
+  {
+    "question": "Berapa total Tagihan Komitmen Bank BCA per 31 Agustus 2024?",
+    "ground_truth": "Total Tagihan Komitmen PT BANK CENTRAL ASIA Tbk per 31 Agustus 2024 adalah 18.681.899 Jutaan Rupiah.",
+    "expected_numbers": ["18.681.899", "18681899"]
+  }
+]

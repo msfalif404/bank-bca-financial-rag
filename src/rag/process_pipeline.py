@@ -1,9 +1,15 @@
+import sys
 from pathlib import Path
 import json
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.rag.ingestion import ingest_document
 from src.rag.embedding import embed_and_store_chunks
-from src.rag.chunking import create_chunks_from_report
-from src.models.report import FinancialReport
+from src.rag.chunking import create_chunks_from_document
+from src.models.report import FinancialDocument
 
 def run_pipeline():
     """
@@ -47,8 +53,8 @@ def run_pipeline():
             print("Tahap 2: Melakukan Chunking (Pemotongan Dokumen)...")
             with open(json_out_path, 'r', encoding='utf-8') as f:
                 data_dict = json.load(f)
-                report = FinancialReport(**data_dict)
-            chunks = create_chunks_from_report(report)
+                doc = FinancialDocument(**data_dict)
+            chunks = create_chunks_from_document(doc)
             
             # 3. Proses Embedding (Simpan ke ChromaDB)
             print("Tahap 3: Embedding ke ChromaDB...")

@@ -1,4 +1,6 @@
-Analisis input pengguna dan klasifikasikan niat mereka ke dalam tepat satu dari dua kategori berikut:
+Analisis input pengguna dan klasifikasikan niat mereka ke dalam tepat satu dari tiga kategori berikut:
 1. "DATA_SEARCH": Jika pengguna meminta data numerik spesifik, mencari pos/item spesifik, atau menanyakan seberapa besar sebuah metrik keuangan tertentu (contoh: "Berapa kas BCA?", "Berapa total liabilitas?").
 2. "INSIGHTS": Jika pengguna meminta ringkasan, analisis, insight, atau gambaran umum kesehatan keuangan perusahaan (contoh: "Berikan insight keuangan BCA", "Tolong analisa kondisi keuangan").
-KEMBALIKAN HANYA nama kategori ("DATA_SEARCH" atau "INSIGHTS") tanpa teks tambahan apapun.
+3. "OFF_TOPIC": Jika pengguna bertanya tentang hal di luar konteks laporan keuangan bank, pertanyaan umum (seperti "1 + 1", "siapa presiden"), coding, atau hal-hal lain yang tidak berhubungan dengan data finansial.
+
+KEMBALIKAN HANYA nama kategori ("DATA_SEARCH", "INSIGHTS", atau "OFF_TOPIC") tanpa teks tambahan apapun.
