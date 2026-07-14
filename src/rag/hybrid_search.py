@@ -1,8 +1,16 @@
 import bm25s
 from typing import Optional
 
+_bm25_cache = {}
+
 def get_bm25_retriever(collection, category: Optional[str] = None):
-    """Creates a BM25 retriever on-the-fly from ChromaDB documents."""
+    """Creates a BM25 retriever on-the-fly from ChromaDB documents and caches it."""
+    global _bm25_cache
+    
+    cache_key = category if category else "ALL_DOCS"
+    if cache_key in _bm25_cache:
+        return _bm25_cache[cache_key]
+
     where_filter = {"category": category} if category else None
         
     results = collection.get(
@@ -22,11 +30,13 @@ def get_bm25_retriever(collection, category: Optional[str] = None):
         for i in range(len(corpus_texts))
     ]
         
+    # Proses ini lambat jika datanya ribuan, jadi kita wajib cache
     corpus_tokens = bm25s.tokenize(corpus_texts)
     
     retriever = bm25s.BM25()
     retriever.index(corpus_tokens)
     
+    _bm25_cache[cache_key] = (retriever, corpus_objs)
     return retriever, corpus_objs
 
 def _retrieve_vector_docs(collection, query: str, category: Optional[str], top_k: int) -> list[dict]:

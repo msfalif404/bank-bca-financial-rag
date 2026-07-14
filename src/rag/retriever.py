@@ -37,12 +37,17 @@ def _get_run_config(streaming: bool = False) -> RunConfig:
 
 def _extract_text_from_event(event) -> str:
     """Extracts text from an event, handling both content parts and message fields safely."""
-    if hasattr(event, "content") and event.content and event.content.parts:
-        text_parts = [part.text for part in event.content.parts if hasattr(part, 'text') and part.text]
-        if text_parts:
-            return "".join(text_parts)
+    if hasattr(event, "content") and event.content:
+        # Abaikan gema dari input user (Stream ADK memberikan event input pengguna di awal stream)
+        if getattr(event.content, "role", "") == "user":
+            return ""
             
-    if hasattr(event, "message") and event.message:
+        if getattr(event.content, "parts", None):
+            text_parts = [part.text for part in event.content.parts if hasattr(part, 'text') and part.text]
+            if text_parts:
+                return "".join(text_parts)
+                
+    if hasattr(event, "message") and isinstance(event.message, str):
         return event.message
         
     return ""

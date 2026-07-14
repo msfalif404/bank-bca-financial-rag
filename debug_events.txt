@@ -1,0 +1,235 @@
+is_final=True, partial=None, content=parts=[Part(
+  text='Test Query'
+)] role='user', message=parts=[Part(
+  text='Test Query'
+)] role='user'
+is_final=False, partial=True, content=parts=[Part(
+  text='Ma'
+)] role='model', message=parts=[Part(
+  text='Ma'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='af'
+)] role='model', message=parts=[Part(
+  text='af'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=','
+)] role='model', message=parts=[Part(
+  text=','
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' saya'
+)] role='model', message=parts=[Part(
+  text=' saya'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' tidak'
+)] role='model', message=parts=[Part(
+  text=' tidak'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' dapat'
+)] role='model', message=parts=[Part(
+  text=' dapat'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' menj'
+)] role='model', message=parts=[Part(
+  text=' menj'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='awab'
+)] role='model', message=parts=[Part(
+  text='awab'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' pert'
+)] role='model', message=parts=[Part(
+  text=' pert'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='anyaan'
+)] role='model', message=parts=[Part(
+  text='anyaan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' tersebut'
+)] role='model', message=parts=[Part(
+  text=' tersebut'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' karena'
+)] role='model', message=parts=[Part(
+  text=' karena'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' berada'
+)] role='model', message=parts=[Part(
+  text=' berada'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' di'
+)] role='model', message=parts=[Part(
+  text=' di'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' luar'
+)] role='model', message=parts=[Part(
+  text=' luar'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' konte'
+)] role='model', message=parts=[Part(
+  text=' konte'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='ks'
+)] role='model', message=parts=[Part(
+  text='ks'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' laporan'
+)] role='model', message=parts=[Part(
+  text=' laporan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' ke'
+)] role='model', message=parts=[Part(
+  text=' ke'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='uangan'
+)] role='model', message=parts=[Part(
+  text='uangan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' Bank'
+)] role='model', message=parts=[Part(
+  text=' Bank'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' B'
+)] role='model', message=parts=[Part(
+  text=' B'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='CA'
+)] role='model', message=parts=[Part(
+  text='CA'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' atau'
+)] role='model', message=parts=[Part(
+  text=' atau'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' pand'
+)] role='model', message=parts=[Part(
+  text=' pand'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='uan'
+)] role='model', message=parts=[Part(
+  text='uan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' sistem'
+)] role='model', message=parts=[Part(
+  text=' sistem'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' saya'
+)] role='model', message=parts=[Part(
+  text=' saya'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='.'
+)] role='model', message=parts=[Part(
+  text='.'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' Jika'
+)] role='model', message=parts=[Part(
+  text=' Jika'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' Anda'
+)] role='model', message=parts=[Part(
+  text=' Anda'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' memiliki'
+)] role='model', message=parts=[Part(
+  text=' memiliki'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' pert'
+)] role='model', message=parts=[Part(
+  text=' pert'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='anyaan'
+)] role='model', message=parts=[Part(
+  text='anyaan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' lain'
+)] role='model', message=parts=[Part(
+  text=' lain'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' terkait'
+)] role='model', message=parts=[Part(
+  text=' terkait'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' laporan'
+)] role='model', message=parts=[Part(
+  text=' laporan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' ke'
+)] role='model', message=parts=[Part(
+  text=' ke'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='uangan'
+)] role='model', message=parts=[Part(
+  text='uangan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=','
+)] role='model', message=parts=[Part(
+  text=','
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' sil'
+)] role='model', message=parts=[Part(
+  text=' sil'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='akan'
+)] role='model', message=parts=[Part(
+  text='akan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text=' aj'
+)] role='model', message=parts=[Part(
+  text=' aj'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='ukan'
+)] role='model', message=parts=[Part(
+  text='ukan'
+)] role='model'
+is_final=False, partial=True, content=parts=[Part(
+  text='.'
+)] role='model', message=parts=[Part(
+  text='.'
+)] role='model'
+is_final=True, partial=False, content=parts=[Part(
+  text='Maaf, saya tidak dapat menjawab pertanyaan tersebut karena berada di luar konteks laporan keuangan Bank BCA atau panduan sistem saya. Jika Anda memiliki pertanyaan lain terkait laporan keuangan, silakan ajukan.'
+)] role='model', message=parts=[Part(
+  text='Maaf, saya tidak dapat menjawab pertanyaan tersebut karena berada di luar konteks laporan keuangan Bank BCA atau panduan sistem saya. Jika Anda memiliki pertanyaan lain terkait laporan keuangan, silakan ajukan.'
+)] role='model'

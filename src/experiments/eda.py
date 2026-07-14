@@ -20,6 +20,7 @@ def parse_indonesian_date(date_str: str) -> pd.Timestamp:
         return pd.to_datetime(f"{year}-{month}-{day}")
     return pd.to_datetime("today")
 
+@st.cache_data(show_spinner="Memuat data keuangan...")
 def load_financial_data(processed_dir: Path = Path("data/processed")) -> pd.DataFrame:
     """Loads all JSON files and aggregates the main financial metrics into a DataFrame."""
     records = []
