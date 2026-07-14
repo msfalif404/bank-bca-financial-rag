@@ -1,7 +1,11 @@
+import os
 import litellm
 from litellm import completion, Cache
 from google.adk import Agent, Workflow, Event
 from google.adk.models.lite_llm import LiteLlm
+
+litellm.success_callback = ["langsmith"]
+litellm.failure_callback = ["langsmith"]
 
 from src.tools.tools import search_financial_records, get_report_overview
 from src.prompts.manager import prompt_manager
@@ -21,10 +25,12 @@ def intent_classifier_node(node_input: str) -> Event:
             temperature=0
         )
         route = response.choices[0].message.content.strip().upper()
-    except Exception:
+    except Exception as e:
+        print(f"Warning: Intent classification failed - {e}")
         route = "OFF_TOPIC"
         
-    if route not in ["DATA_SEARCH", "INSIGHTS", "OFF_TOPIC"]:
+    valid_routes = {"DATA_SEARCH", "INSIGHTS", "OFF_TOPIC"}
+    if route not in valid_routes:
         route = "OFF_TOPIC"
         
     return Event(route=[route], message=node_input)

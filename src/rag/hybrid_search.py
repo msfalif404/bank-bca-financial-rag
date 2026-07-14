@@ -29,38 +29,48 @@ def get_bm25_retriever(collection, category: Optional[str] = None):
     
     return retriever, corpus_objs
 
-def perform_hybrid_search(collection, query: str, category: Optional[str] = None, top_k: int = 10) -> list[dict]:
-    """Performs a hybrid search combining Vector Search (Chroma) and Lexical Search (BM25s)."""
+def _retrieve_vector_docs(collection, query: str, category: Optional[str], top_k: int) -> list[dict]:
+    """Retrieves top_k documents using Chroma vector search."""
     where_filter = {"category": category} if category else None
-        
-    vector_results = collection.query(
+    
+    results = collection.query(
         query_texts=[query],
         n_results=top_k,
         where=where_filter
     )
     
-    vector_docs = []
-    if vector_results['documents'] and vector_results['documents'][0]:
-        vector_docs = [
-            {
-                "id": vector_results['ids'][0][i],
-                "text": vector_results['documents'][0][i],
-                "metadata": vector_results['metadatas'][0][i]
-            }
-            for i in range(len(vector_results['documents'][0]))
-        ]
-            
+    if not results['documents'] or not results['documents'][0]:
+        return []
+        
+    return [
+        {
+            "id": results['ids'][0][i],
+            "text": results['documents'][0][i],
+            "metadata": results['metadatas'][0][i]
+        }
+        for i in range(len(results['documents'][0]))
+    ]
+
+def _retrieve_bm25_docs(collection, query: str, category: Optional[str], top_k: int) -> list[dict]:
+    """Retrieves top_k documents using BM25 lexical search."""
     retriever, corpus_objs = get_bm25_retriever(collection, category)
-    bm25_docs = []
+    if not retriever:
+        return []
+        
+    query_tokens = bm25s.tokenize(query)
+    k_val = min(top_k, len(corpus_objs))
     
-    if retriever:
-        query_tokens = bm25s.tokenize(query)
-        k_val = min(top_k, len(corpus_objs))
+    results, _ = retriever.retrieve(query_tokens, corpus=corpus_objs, k=k_val)
+    
+    if results.shape[1] == 0:
+        return []
         
-        results, _ = retriever.retrieve(query_tokens, corpus=corpus_objs, k=k_val)
-        
-        if results.shape[1] > 0:
-            bm25_docs = [results[0, i] for i in range(results.shape[1])]
+    return [results[0, i] for i in range(results.shape[1])]
+
+def perform_hybrid_search(collection, query: str, category: Optional[str] = None, top_k: int = 10) -> list[dict]:
+    """Performs a hybrid search combining Vector Search (Chroma) and Lexical Search (BM25s)."""
+    vector_docs = _retrieve_vector_docs(collection, query, category, top_k)
+    bm25_docs = _retrieve_bm25_docs(collection, query, category, top_k)
             
     seen_ids = set()
     combined_docs = []

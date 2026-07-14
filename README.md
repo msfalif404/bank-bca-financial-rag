@@ -20,11 +20,32 @@ This project solves that by:
 - **Vector & Storage**: ChromaDB
 - **Retrieval Engine**: BM25s (Lexical) + Vector Search = **Hybrid Search** with Reranking.
 - **Data Validation**: Pydantic
-- **Observability**: OpenTelemetry + Arize Phoenix
-- **Frontend**: Streamlit
+- **Observability**: LangSmith
+- **Frontend**: Streamlit (Multi-Page Architecture)
 
-## 3. Program Flow
+## 3. High-Level Project Flow
 The system operates in two main phases: Ingestion and Retrieval.
+
+```mermaid
+graph TD
+    subgraph "Phase A: Data Ingestion"
+        A[Raw PDF Reports] -->|gpt-4o Extraction| B(Unified JSON Schema)
+        B -->|Semantic Chunking| C(Context-Rich Chunks)
+        C -->|OpenAI Embeddings| D[(ChromaDB Vector Store)]
+        B -->|BM25 Tokenization| E[(Lexical Index)]
+    end
+
+    subgraph "Phase B: Agentic RAG Pipeline"
+        F[User Query] --> G{Intent Classifier Agent}
+        G -->|DATA_SEARCH / INSIGHTS| H[Hybrid Retriever]
+        G -->|OFF_TOPIC| I[Guardrail Rejection]
+        
+        H --> J(Vector Search + Lexical Search)
+        J --> K[Cross-Encoder Reranker]
+        K --> L[Generator Agent]
+        L --> M[Streaming Response]
+    end
+```
 
 ### Phase A: Ingestion (Data Processing)
 1. **Extraction**: Raw PDFs are fed directly to `gpt-4o`. The model maps multi-page tables into a nested `FinancialDocument` Pydantic schema, successfully differentiating multi-page assets, liabilities, and equity into singular unified reports.
@@ -32,12 +53,24 @@ The system operates in two main phases: Ingestion and Retrieval.
 3. **Embedding**: Chunks are embedded via `text-embedding-3-small` and stored in ChromaDB.
 
 ### Phase B: Agentic Retrieval (Querying)
-1. **Intent Classification & Guardrails**: A routing agent evaluates the user query and routes it to:
-   - `DATA_SEARCH`: Specific numerical queries.
-   - `INSIGHTS`: General summaries.
-   - `OFF_TOPIC`: **Guardrail System** that intercepts prompt injections, coding questions, or non-financial queries safely.
+
+**Graph Architecture:**
+```mermaid
+graph LR
+    A((User Input)) --> B{Intent Classifier Node}
+    
+    B -- "DATA_SEARCH" --> C[Financial Analyst Agent]
+    B -- "INSIGHTS" --> D[Overview/Insight Agent]
+    B -- "OFF_TOPIC" --> E[Off-Topic Guardrail Node]
+    
+    C --> F((Output UI))
+    D --> F((Output UI))
+    E --> F((Output UI))
+```
+
+1. **Intent Classification & Guardrails**: A routing agent evaluates the user query and routes it.
 2. **Hybrid Retrieval**: Combines Chroma's semantic vector search with BM25s lexical search to capture both context and exact keyword matches (like specific account names).
-3. **Reranking & Synthesis**: Results are reranked, then fed to the selected specialized agent to stream a precise, grounded answer back to the UI.
+3. **Reranking & Synthesis**: Results are reranked via `CrossEncoder`, then fed to the selected specialized agent to stream a precise, grounded answer back to the UI.
 
 ## 4. Schema Example
 To ensure the LLM doesn't skip data, the target schema supports multiple reports inside a single document:
@@ -102,8 +135,23 @@ Launch the Streamlit interface to chat with the financial agent.
 streamlit run main.py
 ```
 
-**4. Start Telemetry (Optional):**
-To observe traces and agent reasoning steps in real-time.
-```bash
-phoenix serve
-```
+**4. View Observability Traces:**
+Make sure `LANGCHAIN_TRACING_V2=true` and `LANGCHAIN_API_KEY` are set in your `.env`. You can then view the full trace of LLM calls, latency, and tokens on the [LangSmith Dashboard](https://smith.langchain.com/).
+
+## 7. Codebase Walkthrough (For Developers)
+
+Here is a quick map of the repository to help you navigate and extend the system:
+
+- **`main.py`**: The Streamlit multi-page entry point. Handles the UI routing between the EDA Dashboard and the Chat Assistant.
+- **`src/agents/agents.py`**: Defines the Google ADK Agent Graph. Contains the Intent Classifier and routing logic (Guardrails, Data Search, Insights).
+- **`src/experiments/eda.py`**: Contains the Exploratory Data Analysis script and Streamlit rendering logic for the Business Insights dashboard.
+- **`src/models/report.py`**: The Pydantic schema definition (`FinancialDocument`) used to enforce structured JSON extraction from PDFs.
+- **`src/rag/`**: The core of the RAG pipeline.
+  - `process_pipeline.py`: Orchestrates the entire ingestion process (PDF -> JSON -> ChromaDB).
+  - `ingestion.py`: Uses `gpt-4o` to extract data from PDFs into the Pydantic schema.
+  - `chunking.py`: Breaks down the structured JSON into semantically rich text chunks.
+  - `embedding.py`: Manages the ChromaDB client and OpenAI embedding functions.
+  - `hybrid_search.py`: Implements the dual-retrieval system (Vector + BM25 Lexical).
+  - `reranker.py`: Employs a HuggingFace `CrossEncoder` to re-score and rerank retrieved documents with `@st.cache_resource` memory optimization.
+  - `retriever.py`: Bridges the agent queries to the hybrid search and reranker pipeline.
+- **`src/utils/evaluate.py`**: Automated testing script to validate the system's accuracy against Ground Truth datasets.
